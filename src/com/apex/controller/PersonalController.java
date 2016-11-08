@@ -22,7 +22,7 @@ import com.apex.validation.PersonalVO;
 @SessionAttributes("personalVO")
 public class PersonalController {
 	private Validator validator;
-
+ 
 	public PersonalController() {
 	ValidatorFactory validatorFactory=Validation.buildDefaultValidatorFactory();
 	validator= validatorFactory.getValidator();
@@ -30,6 +30,7 @@ public class PersonalController {
 	
 	 @RequestMapping("/addNew")
 	    public String setupForm(Model model) {
+		 System.out.println("THis is PersonalController");
 	       PersonalVO personalVO = new PersonalVO();
 	        model.addAttribute("personalVO", personalVO);
 	        return "addPersonalInfo";
